@@ -1,0 +1,52 @@
+#Le Phuoc Thang Nguyen 
+#want to create a simple program 
+#that allow human to play simple games with computer 
+#lets do rock scissor and paper game
+
+#same idea, we use the number 0 - 1 - 2 to name the 3 elements
+#then use the module to test
+import random
+random.randrange(0,3)
+computer_number = random.randrange(0,3)
+
+
+def name_to_number(player_choice):
+    if player_choice == "rock":
+        return 0
+    elif player_choice == "scissor":
+        return 1
+    elif player_choice == "paper":
+        return 2
+    else:
+        print "Invalid selection"
+       
+def number_to_name(computer_number):
+    if computer_number == 0:
+        return "rock"
+    elif computer_number == 1:
+        return "scissor"
+    elif computer_number == 2:
+        return "paper"
+    else:
+        print "Invalid"
+
+def game(player_choice):
+    
+    print "The Player Select", player_choice
+    print "The Computer Select", number_to_name(computer_number)
+
+    
+    if ((name_to_number(player_choice) - computer_number) % 3) == 1:
+        print "Player lose the game"
+    if ((name_to_number(player_choice) - computer_number) % 3) == 2:
+        print "Player win the game"
+    if ((name_to_number(player_choice) - computer_number) % 3) == 0:
+        print "Game is tie"
+    print ""
+    
+game("rock")
+game("paper")
+game("scissor")
+    
+    
+
